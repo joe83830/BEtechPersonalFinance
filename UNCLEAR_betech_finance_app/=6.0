@@ -1,0 +1,27 @@
+Collecting twilio
+  Downloading https://files.pythonhosted.org/packages/dd/d4/bd26b39f93a4603aa0e7a6ed64accfa9e66b79dde568781061cebd0b5f68/twilio-6.26.1-py2.py3-none-any.whl (977kB)
+Collecting pytz (from twilio)
+  Downloading https://files.pythonhosted.org/packages/3d/73/fe30c2daaaa0713420d0382b16fbb761409f532c56bdcc514bf7b6262bb6/pytz-2019.1-py2.py3-none-any.whl (510kB)
+Collecting requests>=2.0.0; python_version >= "3.0" (from twilio)
+  Downloading https://files.pythonhosted.org/packages/7d/e3/20f3d364d6c8e5d2353c72a67778eb189176f08e873c9900e10c0287b84b/requests-2.21.0-py2.py3-none-any.whl (57kB)
+Collecting six (from twilio)
+  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Collecting PyJWT>=1.4.2 (from twilio)
+  Downloading https://files.pythonhosted.org/packages/87/8b/6a9f14b5f781697e51259d81657e6048fd31a113229cf346880bb7545565/PyJWT-1.7.1-py2.py3-none-any.whl
+Collecting pysocks; python_version >= "3.0" (from twilio)
+  Downloading https://files.pythonhosted.org/packages/53/12/6bf1d764f128636cef7408e8156b7235b150ea31650d0260969215bb8e7d/PySocks-1.6.8.tar.gz (283kB)
+Collecting idna<2.9,>=2.5 (from requests>=2.0.0; python_version >= "3.0"->twilio)
+  Downloading https://files.pythonhosted.org/packages/14/2c/cd551d81dbe15200be1cf41cd03869a46fe7226e7450af7a6545bfc474c9/idna-2.8-py2.py3-none-any.whl (58kB)
+Collecting chardet<3.1.0,>=3.0.2 (from requests>=2.0.0; python_version >= "3.0"->twilio)
+  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+Collecting urllib3<1.25,>=1.21.1 (from requests>=2.0.0; python_version >= "3.0"->twilio)
+  Downloading https://files.pythonhosted.org/packages/62/00/ee1d7de624db8ba7090d1226aebefab96a2c71cd5cfa7629d6ad3f61b79e/urllib3-1.24.1-py2.py3-none-any.whl (118kB)
+Collecting certifi>=2017.4.17 (from requests>=2.0.0; python_version >= "3.0"->twilio)
+  Downloading https://files.pythonhosted.org/packages/60/75/f692a584e85b7eaba0e03827b3d51f45f571c2e793dd731e598828d380aa/certifi-2019.3.9-py2.py3-none-any.whl (158kB)
+Building wheels for collected packages: pysocks
+  Building wheel for pysocks (setup.py): started
+  Building wheel for pysocks (setup.py): finished with status 'done'
+  Stored in directory: /Users/joeliao/Library/Caches/pip/wheels/22/5c/b5/12e0dfdfa85bea67b23628b6425fae715c687e947a45ee3df9
+Successfully built pysocks
+Installing collected packages: pytz, idna, chardet, urllib3, certifi, requests, six, PyJWT, pysocks, twilio
+Successfully installed PyJWT-1.7.1 certifi-2019.3.9 chardet-3.0.4 idna-2.8 pysocks-1.6.8 pytz-2019.1 requests-2.21.0 six-1.12.0 twilio-6.26.1 urllib3-1.24.1
