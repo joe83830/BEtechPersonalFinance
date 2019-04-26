@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        {/*<App />*/}
+        <Switch>
+            <Route path={"/"} component={App} exact/>
+            <Route path="/results" component={App} exact/>
+        </Switch>
     </BrowserRouter>
     , document.getElementById('root'));
 

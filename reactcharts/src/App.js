@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Chart from './components/Chart';
 import NavBar from './components/NavBar';
 import LineChart from './components/Line';
+import Form from './components/form';
 
 class App extends Component{
 
@@ -11,8 +11,10 @@ class App extends Component{
         super();
         this.state = {
             chartData: {},
-            lineData: {}
+            lineData: {},
+            savingsGoal: 'Savings Goal...'
         }
+        this.updateSavingsGoal = this.updateSavingsGoal.bind(this);
     }
 
     componentWillMount(){
@@ -93,6 +95,10 @@ class App extends Component{
         });
     }
 
+    updateSavingsGoal(e) {
+        this.setState({savingsGoal: e.target.value});
+    }
+
     render() {
         return (
             <div className="App">
@@ -100,11 +106,39 @@ class App extends Component{
                     {/*<img src={logo} className="App-logo" alt="logo" />*/}
                 {/*</header>*/}
                 <NavBar/>
+                {/*<Form2/>*/}
+                <input type = "text" value = {this.state.savingsGoal}
+                       onChange = {this.updateSavingsGoal} />
+                <h4>{this.state.savingsGoal}</h4>
+
                 <LineChart lineData={this.state.lineData}/>
                 <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition={"bottom"}/>
             </div>
         );
     }
 }
+
+// class Form2 extends React.Component {
+//     constructor(props) {
+//         super(props);
+//
+//         this.state = {
+//             data: 'Savings Goal...'
+//         }
+//         this.updateState = this.updateState.bind(this);
+//     };
+//     updateState(e) {
+//         this.setState({data: e.target.value});
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <input type = "text" value = {this.state.data}
+//                        onChange = {this.updateState} />
+//                 <h4>{this.state.data}</h4>
+//             </div>
+//         );
+//     }
+// }
 
 export default App;
