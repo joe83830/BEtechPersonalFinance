@@ -8,7 +8,7 @@ class LineChart extends Component{
         this.state = {
             lineData: props.lineData
         }
-        console.log(this.state.lineData)
+        // console.log(this.state.lineData)
     }
 
     // static defaultProps = {
@@ -19,12 +19,13 @@ class LineChart extends Component{
     // }
 
     render(){
-        console.log(this.state.lineData)
+        // console.log(this.state.lineData)
         return (
             <div className="lineChart">
                 <Line
                     data={this.state.lineData}
                     options={{
+                        maintainAspectRatio : false,
                         responsive: true,
                         hoverMode: 'index',
                         stacked: false,

@@ -24,9 +24,10 @@ class Chart extends Component{
                 <Bar
                     data={this.state.chartData}
                     options={{
+                        maintainAspectRatio : false,
                         title: {
                             display: this.props.displayTitle,
-                            text: "Largest cities in " + this.props.location,
+                            text: "You v.s. Average American Coffee Spending/week",
                             fontSize: 25
                         },
                         legend: {

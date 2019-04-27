@@ -12,7 +12,7 @@ class App extends Component{
         this.state = {
             chartData: {},
             lineData: {},
-            savingsGoal: 'Savings Goal...'
+            savingsGoal: 28
         }
         this.updateSavingsGoal = this.updateSavingsGoal.bind(this);
     }
@@ -27,26 +27,17 @@ class App extends Component{
         // Ajax calls here
         this.setState({
             chartData: {
-                labels: ['Boston1', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+                labels: ['You', 'Average American'],
                 datasets: [
                     {
-                        label: 'Population',
+                        label: 'Dollars',
                         data: [
-                            617594,
-                            181045,
-                            153060,
-                            106519,
-                            105162,
-                            95072
+                            24,
+                            91,
                         ],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.6)',
                             'rgba(54, 162, 235, 0.6)',
-                            'rgba(255, 206, 86, 0.6)',
-                            'rgba(75, 192, 192, 0.6)',
-                            'rgba(153, 102, 255, 0.6)',
-                            'rgba(255, 159, 64, 0.6)',
-                            'rgba(255, 99, 132, 0.6)'
                         ]
                     }
 
@@ -59,35 +50,35 @@ class App extends Component{
 
         this.setState({
             lineData: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
                 datasets: [{
-                    label: 'My First dataset',
+                    label: 'My Savings Goal',
                     borderColor: 'rgba(255, 99, 132, 0.6)',
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
                     fill: false,
                     data: [
-                        0.5,
-                        0.1,
-                        0.3,
-                        0.4,
-                        0.8,
-                        0.6,
-                        0.7
+                        4,
+                        8,
+                        12,
+                        16,
+                        20,
+                        24,
+                        28
                     ],
                     yAxis: 'y-axis-1',
                 }, {
-                    label: 'My Second dataset',
-                    borderColor: 'rgba(255, 99, 132, 0.6)',
-                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    label: 'My Savings So far',
+                    borderColor: 'rgba(54, 162, 235, 0.6)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     fill: false,
                     data: [
-                        0.8,
-                        0.1,
-                        0.3,
-                        0.4,
-                        0.8,
-                        0.6,
-                        0.7
+                        0,
+                        0,
+                        4
+                        // 8,
+                        // 8,
+                        // 8,
+                        // 12
                     ],
                     yAxis: 'y-axis-2'
                 }]
@@ -96,10 +87,62 @@ class App extends Component{
     }
 
     updateSavingsGoal(e) {
-        this.setState({savingsGoal: e.target.value});
+        console.log("HAAAAAA");
+        console.log(e.target[0].value);
+        // console.log(e.target.getAttribute('input'));
+        // const value = parseInt(e.target.value, 10);
+        this.setState({
+            savingsGoal: e.target[0].value,
+            lineData: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                datasets: [{
+                    label: 'My Savings Goal',
+                    borderColor: 'rgba(255, 99, 132, 0.6)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    fill: false,
+                    data: [
+                        e.target[0].value,
+                        e.target[0].value,
+                        12,
+                        16,
+                        20,
+                        24,
+                        28
+                    ],
+                    yAxis: 'y-axis-1',
+                }, {
+                    label: 'My Savings So Far',
+                    borderColor: 'rgba(54, 162, 235, 0.6)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    fill: false,
+                    data: [
+                        0,
+                        0,
+                        4,
+                        8,
+                        8,
+                        8,
+                        12
+                    ],
+                    yAxis: 'y-axis-2'
+                }]
+            }}, () => {console.log("WHAT THE FUCK")});
+        console.log("SAVINGS GOAL UPDATED");
+        console.log(this.state.savingsGoal);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log(
+            `this.state.clickCounts(♻️ componentDidUpdate)`,
+
+            "UPDATED TO" + this.state.savingsGoal
+        );
     }
 
     render() {
+        // console.log(this.state.lineData)
+        // console.log(this.state.savingsGoal)
+        console.log(this.state.savingsGoal);
         return (
             <div className="App">
                 {/*<header className="App-header">*/}
@@ -107,14 +150,22 @@ class App extends Component{
                 {/*</header>*/}
                 <NavBar/>
                 {/*<Form2/>*/}
-                <input type = "text" value = {this.state.savingsGoal}
-                       onChange = {this.updateSavingsGoal} />
+                {/*<input type = "text" value = {this.state.savingsGoal}*/}
+                       {/*onChange = {this.updateSavingsGoal} />*/}
+
+                <form onSubmit={this.updateSavingsGoal}>
+                    <label>SavingsGoal  </label>
+                    <input type = "text" defaultValue={this.state.savingsGoal}/>
+                    <button>Send data!</button>
+                </form>
+
                 <h4>{this.state.savingsGoal}</h4>
 
                 <LineChart lineData={this.state.lineData}/>
                 <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition={"bottom"}/>
             </div>
         );
+
     }
 }
 

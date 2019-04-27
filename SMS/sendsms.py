@@ -26,7 +26,7 @@ def send_sms(url):
     # account to send SMS to any phone number
     client.messages.create(to="+13475932734",
                            from_="+16463628568",
-                           body="Hello from Python!")
+                           body="https://betechpersonalspending.netlify.com")
 
 
 if __name__ == "__main__":
