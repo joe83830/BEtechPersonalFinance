@@ -31,8 +31,10 @@ class LineChart extends Component{
                         stacked: false,
                         title: {
                             display: true,
-                            text: 'You v.s. Your Savings Goal',
+                            text: "CI Worked",
+                            // text: 'You v.s. Your Savings Goal',
                             fontSize: 30
+
                         },
                         scales: {
                             yAxes: [{
